@@ -16,10 +16,16 @@ public class Task2 {
 
 		double x = a, y;
 		while (x <= b) {
-			y = (x > 2) ? x + 4 : -x * 2;
-			System.out.println(String.format("%.3f\t%.3f", x, y));
+			y = f(x);
+			System.out.printf("%.3f\t%.3f%n", x, y);
 			x += h;
 		}
+	}
+
+	private static double f(double x) {
+		double y;
+		y = (x > 2) ? x + 4 : -x * 2;
+		return y;
 	}
 
 }
