@@ -7,8 +7,7 @@ public class Task1 {
 
 	public static void main(String[] args) {
 		int rowCount = 6, columnCount = 8;
-		int[][] intArray = new int[rowCount][columnCount];
-		ArrayUtil.fillWithRandom(intArray, -10, 10);
+		int[][] intArray = ArrayUtil.randomInteger(rowCount, columnCount, -10, 10);
 		ConsoleUtil.printArray(intArray);
 	}
 

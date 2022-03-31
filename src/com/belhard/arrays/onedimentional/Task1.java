@@ -11,8 +11,7 @@ public class Task1 {
 		int arrayLength = ConsoleUtil.getPositiveInt("Array length", 10);
 		int divisor = ConsoleUtil.getPositiveInt("divisor", 2);
 
-		int[] intArray = new int[arrayLength];
-		ArrayUtil.fillWithRandom(intArray, 0, 500);
+		int[] intArray = ArrayUtil.randomInteger(arrayLength, 0, 500);
 		ConsoleUtil.printArray(intArray);
 
 		int summ = MathUtil.summOfArrayElements(intArray, divisor);

@@ -9,14 +9,13 @@ public class Task2 {
 		int arrayLength = ConsoleUtil.getPositiveInt("Array length", 10);
 
 		int positiveCount = 0, negativeCount = 0, zerosCount = 0;
-		double[] arrayOfDouble = new double[arrayLength];
-		arrayOfDouble = ArrayUtil.fillWithRandom(arrayOfDouble, -5, 5);
+		double[] arrayOfDouble = ArrayUtil.randomDouble(arrayLength, -5, 5);
 		ConsoleUtil.printArray(arrayOfDouble);
-		
-		for (int i = 0; i < arrayOfDouble.length; i++) {			
-			if (arrayOfDouble[i] > 0)
+
+		for (double elm : arrayOfDouble) {
+			if (elm > 0)
 				positiveCount++;
-			else if (arrayOfDouble[i] < 0)
+			else if (elm < 0)
 				negativeCount++;
 			else
 				zerosCount++;

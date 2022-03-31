@@ -58,24 +58,36 @@ public class ConsoleUtil {
     }
 
     public static void printArray(int[] array) {
-        System.out.println("Array content:");
-        for (int j : array) {
-            System.out.println(j);
+        System.out.print("Array content: \n[");
+        for (int i = 0; i < array.length; i++) {
+            System.out.printf("%d", array[i]);
+            if (i < array.length - 1) {
+                System.out.print(", ");
+                if (i % 11 == 0 && i != 0)
+                    System.out.println();
+            }
         }
+        System.out.println("]");
     }
 
     public static void printArray(double[] array) {
-        System.out.println("Array content: ");
-        for (double v : array) {
-            System.out.printf("%.6f%n", v);
+        System.out.print("Array content: \n[");
+        for (int i = 0; i < array.length; i++) {
+            System.out.printf("%.4g", array[i]);
+            if (i < array.length - 1) {
+                System.out.print(", ");
+                if (i % 11 == 0 && i != 0)
+                    System.out.println();
+            }
         }
+        System.out.println("]");
     }
 
     public static void printArray(int[][] array) {
         System.out.println("Array content: ");
         for (int[] ints : array) {
             for (int j = 0; j < array[0].length; j++) {
-                System.out.print(ints[j] + "\t");
+                System.out.printf("%5d\t", ints[j]);
             }
             System.out.println();
         }
