@@ -2,26 +2,29 @@ package com.belhard.utils;
 
 public class ArrayUtil {
 
-	public static double[] fillWithRandom(double[] array, double min, double max) {
-		double[] returnArray = new double[array.length];
-		for (int i = 0; i < returnArray.length; i++) {
-			returnArray[i] = MathUtil.randomReal(min, max);
+	public static double[] randomDouble(int arrayLength, double min, double max) {
+		double[] output = new double[arrayLength];
+		for (int i = 0; i < output.length; i++) {
+			output[i] = MathUtil.randomReal(min, max);
 		}
-		return returnArray;
+		return output;
 	}
 
-	public static int[] fillWithRandom(int[] array, double min, double max) {
-		for (int i = 0; i < array.length; i++) {
-			array[i] = MathUtil.randomInt(min, max);
+	public static int[] randomInteger(int arrayLength, double min, double max) {
+		int[] output = new int[arrayLength];
+		for (int i = 0; i < output.length; i++) {
+			output[i] = MathUtil.randomInt(min, max);
 		}
-		return array;
+		return output;
 	}
 
-	public static void fillWithRandom(int[][] array, int min, int max) {
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array[0].length; j++)
-				array[i][j] = MathUtil.randomInt(min, max);
+	public static int[][] randomInteger(int arrayRows, int arrayColumns, int min, int max) {
+		int[][] output = new int[arrayRows][arrayColumns];
+		for (int i = 0; i < output.length; i++) {
+			for (int j = 0; j < output[0].length; j++)
+				output[i][j] = MathUtil.randomInt(min, max);
 		}
+		return output;
 	}
 
 	public static void burbleSort(int[] arrayForSorting) {
@@ -37,5 +40,4 @@ public class ArrayUtil {
 			}
 		}
 	}
-
 }
