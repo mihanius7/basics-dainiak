@@ -43,13 +43,17 @@ public class ArrayUtil {
 
     public static ArrayStatistics statistics(double[] arrayOfDouble) {
         ArrayStatistics result = new ArrayStatistics();
-        for (double elm : arrayOfDouble) {
-            if (elm > 0)
-                result.positiveCount++;
-            else if (elm < 0)
-                result.negativeCount++;
-            else
-                result.zerosCount++;
+        try {
+            for (double elm : arrayOfDouble) {
+                if (elm > 0)
+                    result.positiveCount++;
+                else if (elm < 0)
+                    result.negativeCount++;
+                else
+                    result.zerosCount++;
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
         return result;
     }
