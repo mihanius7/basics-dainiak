@@ -18,9 +18,7 @@ public class ConsoleUtil {
             input = scanner.nextInt();
             return input;
         } else {
-            System.out.println(rb.getString("wrong") + " '" + varName + "': " + defaultValue);
-            scanner.next();
-            return defaultValue;
+            throw new IllegalArgumentException("Integer value can't be recognized.");
         }
 
     }
@@ -28,8 +26,7 @@ public class ConsoleUtil {
     public static int getPositiveInt(String varName, int defaultValue) {
         int input = getInt(varName, defaultValue);
         if (input <= 0) {
-            System.out.println(rb.getString("positive") + " '" + varName + "': " + defaultValue);
-            return defaultValue;
+            throw new IllegalArgumentException("Integer value must be positive.");
         }
         return input;
     }
@@ -42,17 +39,14 @@ public class ConsoleUtil {
             input = scanner.nextDouble();
             return input;
         } else {
-            System.out.println(rb.getString("wrong") + " '" + varName + "': " + defaultValue);
-            scanner.next();
-            return defaultValue;
+            throw new IllegalArgumentException("Double value can't be recognized.");
         }
     }
 
     public static double getPositiveDouble(String varName, double defaultValue) {
         double input = getDouble(varName, defaultValue);
         if (input <= 0) {
-            System.out.println(rb.getString("positive") + " '" + varName + "': " + defaultValue);
-            return defaultValue;
+            throw new IllegalArgumentException("Integer value must be positive.");
         }
         return input;
     }
