@@ -34,6 +34,6 @@ public class MathUtil {
 		int hours = inputSeconds / 3600;
 		int minutes = (inputSeconds % 3600) / 60;
 		int seconds = inputSeconds % 60;
-		return (hours + "h " + minutes + "min " + seconds + "s");
+		return String.format("%02dh %02dmin %02ds", hours, minutes, seconds);
 	}
 }
